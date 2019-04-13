@@ -16,8 +16,9 @@ class KaraokeBar
 
   def book_room(guest)
     # return if over_capacity?(guest)
-      guest.pay(@entry_fee)
-      @till += @entry_fee
+      if guest.pay(@entry_fee)
+        @till += @entry_fee
+      end
   end
 
 

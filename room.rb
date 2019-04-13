@@ -4,15 +4,21 @@ class Room
 
   def initialize(name, capacity)
     @name = name
+    @songs = [ ]
     @capacity = capacity
-    @songs = []
-    @occupants = []
+    @occupants = [ ]
   end
 
 
-  def add_songs
+  def count_songs
+    @songs.length
+  end
 
 
+  def add_songs(new_songs)
+    for song in new_songs
+      @songs << song
+    end
   end
 
 
