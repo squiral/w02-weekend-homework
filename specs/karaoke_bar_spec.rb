@@ -33,10 +33,17 @@ class TestKaraokeBar < Minitest::Test
     assert_equal(100.00, @karaoke_bar.till)
   end
 
-  def test_book_room
+  def test_book_room__sufficient_funds
     @karaoke_bar.book_room(@guest)
     assert_equal(150.00, @karaoke_bar.till)
   end
+
+  def test_book_room__insufficient_funds
+    @karaoke_bar.book_room(@guest2)
+    assert_equal(100.00, @karaoke_bar.till)
+  end
+
+
 
 
 
