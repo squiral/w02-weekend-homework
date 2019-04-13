@@ -3,7 +3,7 @@ class KaraokeBar
   attr_reader :name, :rooms, :entry_fee, :till
 
 
-  def initialize(name, rooms, till, entry_fee)
+  def initialize(name, rooms, till = 100.00, entry_fee = 50.00)
     @name = name
     @rooms = rooms
     @till = till
