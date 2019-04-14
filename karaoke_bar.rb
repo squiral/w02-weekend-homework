@@ -22,7 +22,7 @@ class KaraokeBar
 
   def check_in_guests(guests, room)
     for guest in guests
-      if room.full_capacity? == false && guest.sufficient_funds?(@entry_fee) == true
+      if !room.full_capacity? && guest.sufficient_funds?(@entry_fee)
         guest.pay(@entry_fee)
         @till += @entry_fee
         room.check_into_room(guest)

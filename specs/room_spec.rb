@@ -42,55 +42,6 @@ class TestRoom < Minitest::Test
     assert_equal(0, @room.count_occupants)
   end
 
-  def test_check_into_room
-    guests = [@guest, @guest2]
-    @room.check_into_room(guests)
-    assert_equal(2, @room.count_occupants)
-  end
-  #
-  # def test_full_capcity__true
-  #   guest1 = Guest.new("Michael", 50.00)
-  #   guest2 = Guest.new("Helen", 50.00)
-  #   guest3 = Guest.new("Gregory", 50.00)
-  #   guests = [guest1, guest2, guest3]
-  #   @room.check_in_guests(@karaoke_bar, guests)
-  #   assert_equal(true, @room.full_capacity?)
-  # end
-  #
-  # def test_full_capcity__false
-  #   guest1 = Guest.new("Michael", 50.00)
-  #   guest2 = Guest.new("Helen", 50.00)
-  #   guests = [guest1, guest2]
-  #   @room.check_in_guests(@karaoke_bar, guests)
-  #   assert_equal(false, @room.full_capacity?)
-  # end
-
-  # def test_find_guest_by_name
-  #   @room.check_in_guests(@karaoke_bar, [@guest])
-  #   assert_equal("Michael", @room.find_guest_by_name(@guest))
-  # end
-
-  # def test_doesnt_check_in_guests_at_full_capacity
-  #   # Capacity is 3, the 4th guest should not be checked in
-  #   guest1 = Guest.new("Michael", 50.00)
-  #   guest2 = Guest.new("Helen", 50.00)
-  #   guest3 = Guest.new("Gregory", 50.00)
-  #   guest4 = Guest.new("Louis", 50.00)
-  #   guests = [guest1, guest2, guest3, guest4]
-  #   @room.check_in_guests(@karaoke_bar, guests)
-  #   assert_equal("Gregory", @room.find_guest_by_name(guest3))
-  #   assert_equal(false, @room.find_guest_by_name(guest4))
-  # end
-
-  # def test_check_in_guests_pay_into_karaoke_bar_till
-  #   # Karaoke bar till is 100.00 before guests
-  #   assert_equal(100.00, @karaoke_bar.check_till)
-  #   guests = [@guest, @guest2]
-  #   @room.check_in_guests(@karaoke_bar, guests)
-  #   assert_equal(200.00, @karaoke_bar.check_till)
-  #
-  # end
-
 
 
 
