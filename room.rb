@@ -30,14 +30,8 @@ class Room
     @occupants.count == @capacity ? true : false
   end
 
-  def check_in_guests(karaoke_bar, guests)
-    for guest in guests
-      if full_capacity? == false
-        guest.pay(karaoke_bar.entry_fee)
-        karaoke_bar.book_room(guest)
-        @occupants << guest
-      end
-    end
+  def check_into_room(guest)
+      @occupants << guest
   end
 
   def find_guest_by_name(guest)
@@ -51,6 +45,15 @@ class Room
 
   end
 
+
+
+  # for guest in guests
+  #   if full_capacity? == false
+  #     guest.pay(karaoke_bar.entry_fee)
+  #     karaoke_bar.take_payment(guest)
+  #     @occupants << guest
+  #   end
+  # end
 
 
 

@@ -14,12 +14,22 @@ class KaraokeBar
     return @rooms.length
   end
 
-  def book_room(guest)
-    # return if over_capacity?(guest)
+  def take_payment(guest)
       if guest.pay(@entry_fee)
         @till += @entry_fee
       end
   end
+
+  def check_in_guests(guests, room)
+    for guest in guests
+      if room.full_capacity? == false && guest.sufficient_funds?(@entry_fee) == true
+        guest.pay(@entry_fee)
+        @till += @entry_fee
+        room.check_into_room(guest)
+      end
+    end
+  end
+
 
 
 

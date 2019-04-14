@@ -37,19 +37,19 @@ class TestGuest < Minitest::Test
     assert_equal(false, @guest2.sufficient_funds?(@karaoke_bar.entry_fee))
   end
 
-  def test_guest_buy_room__sufficient_funds
+  def test_guest_pay_sufficient_funds
     assert_equal(50.00 , @guest.wallet)
     @guest.pay(@karaoke_bar.entry_fee)
     assert_equal(0.00 , @guest.wallet)
   end
 
-  def test_guest_buy_room__insufficient_funds
+  def test_guest_pay__insufficient_funds
     assert_equal(45.00 , @guest2.wallet)
     @guest2.pay(@karaoke_bar.entry_fee)
     assert_equal(45.00 , @guest2.wallet)
   end
 
-  
+
 
 
 end
