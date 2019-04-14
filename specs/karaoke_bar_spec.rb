@@ -24,6 +24,7 @@ class TestKaraokeBar < Minitest::Test
     @guest2 = Guest.new("Jessica", 45.00, "California Dreams")
     @guest3 = Guest.new("Sandra", 70.00, "Electrolite")
     @guest4 = Guest.new("Alison", 65.00, "Livin' Thing")
+    @guest5 = Guest.new("Jason", 60.00, "The Weight")
     @guests = [@guest1, @guest2]
 
     @karaoke_bar = KaraokeBar.new("Sugar Cube", @rooms, 100.00, 50.00)
@@ -57,10 +58,22 @@ class TestKaraokeBar < Minitest::Test
     assert_equal(100.00, @karaoke_bar.till)
   end
 
-  def test_check_in_guests
+  def test_check_in_guests_with_sufficient_funds
     @karaoke_bar.check_in_guests(@guests, @room1)
     assert_equal(150.00, @karaoke_bar.till)
+    assert_equal(1, @room1.count_occupants)
   end
 
+  # def test_empty_room_of_guests
+  #   guests = [@guest1, @guest3, @guest4, @guest5]
+  #   @karaoke_bar.check_in_guests(guests, @room1)
+  #   assert_equal(4, @room1.count_occupants)
+  #   @karaoke_bar.empty_room_of_guests(@room1)
+  #   p @room1.occupants
+  #   assert_equal(0, @room1.count_occupants)
+  # end
+
+
+ #  ^^^^ Only checking out every other guest (@guest1 + @guest4)??
 
 end
